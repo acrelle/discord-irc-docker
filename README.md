@@ -1,5 +1,5 @@
 # discord-irc
-Raspberry PI image for discord-irc running on nodejs
+Raspberry PI docker image for discord-irc running on nodejs
 
 Based on armhf/node
 
