@@ -6,5 +6,5 @@ RUN apt-get update && \
  apt-get purge -y 
 
 RUN npm update && \
- npm install -g -S uws zlib-sync discordapp/erlpack discord-irc
+ npm install -S uws zlib-sync discordapp/erlpack discord-irc
 USER node
