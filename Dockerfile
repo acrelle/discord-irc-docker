@@ -9,3 +9,6 @@ USER node
 RUN cd ~ && npm update && \
  npm install -S uws zlib-sync discordapp/erlpack discord-irc
 
+VOLUME [ "/usr/discord-irc" ]
+ENTRYPOINT [ "/home/node/node_modules/.bin/discord-irc","--config","/usr/discord-irc/config.json" ]
+
