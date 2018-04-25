@@ -11,9 +11,13 @@ This provides a container for: https://github.com/reactiflux/discord-irc
 
 Prepare your config.json and share the folder as per below
 
+```
 docker run -dt -v discord-irc:/usr/discord-irc acrelle/rpi-discord-irc:latest
+```
 
-# Docker-Compose
+## Docker-Compose
+
+Sample usage:
 
 ~~~
 version: "2"
