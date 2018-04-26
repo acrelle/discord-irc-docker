@@ -5,7 +5,6 @@ services:
     build: .
     image: acrelle/rpi-discord-irc
     container_name: discord-irc
-    network_mode: bridge
     restart: always
     volumes:
       - ~/appdata/discord-irc:/usr/discord-irc
