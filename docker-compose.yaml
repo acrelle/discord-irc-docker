@@ -5,6 +5,6 @@ services:
     build: .
     image: acrelle/rpi-discord-irc
     container_name: discord-irc
-    restart: always
+    restart: unless-stopped
     volumes:
-      - ~/appdata/discord-irc:/usr/discord-irc
+      - ~/appdata/discord-irc:/opt/discord-irc

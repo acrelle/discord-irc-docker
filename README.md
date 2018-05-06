@@ -15,7 +15,7 @@ This provides a container for: https://github.com/reactiflux/discord-irc
 Prepare your config.json and share the folder as per below
 
 ```
-docker run -dt -v discord-irc:/usr/discord-irc acrelle/rpi-discord-irc:latest
+docker run -dt -v discord-irc:/opt/discord-irc acrelle/rpi-discord-irc:latest
 ```
 
 ## Docker-Compose
@@ -30,7 +30,7 @@ services:
     image: acrelle/rpi-discord-irc
     container_name: discord-irc
     network_mode: bridge
-    restart: always
+    restart: unless-stopped
     volumes:
-      - ~/appdata/discord-irc:/usr/discord-irc
+      - ~/appdata/discord-irc:/opt/discord-irc
 ~~~
