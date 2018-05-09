@@ -2,7 +2,7 @@ FROM node
 LABEL maintainer="anthony@relle.co.uk"
 
 RUN apt-get update && \
- apt-get install -y libicu-dev && \
+ apt-get install --no-install-recommends -y libicu-dev && \
  rm -rf /var/lib/apt/lists/*
 
 USER node

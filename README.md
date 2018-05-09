@@ -1,5 +1,6 @@
 # discord-irc
-Raspberry PI image for discord-irc running on nodejs using node (amd64 + arm32v7 for Raspberry 2 onwards)
+
+Image for discord-irc running on nodejs using node (amd64 + arm32v7 for Raspberry 2 onwards)
 
 ## Source
 https://github.com/acrelle/discord-irc-docker
