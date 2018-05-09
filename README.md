@@ -1,15 +1,18 @@
 # discord-irc
-Raspberry PI image for discord-irc running on nodejs using arm32v7/node:latest (Raspberry 2 onwards)
+Raspberry PI image for discord-irc running on nodejs using node (amd64 + arm32v7 for Raspberry 2 onwards)
 
 ## Source
 https://github.com/acrelle/discord-irc-docker
 
 ## Build
-[![](https://images.microbadger.com/badges/version/acrelle/rpi-discord-irc.svg)](https://microbadger.com/images/acrelle/rpi-discord-irc "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/acrelle/rpi-discord-irc.svg)](https://microbadger.com/images/acrelle/rpi-discord-irc "Get your own image badge on microbadger.com")[![Build Status](https://jenkins.relle.uk/buildStatus/icon?job=rpi-discord-irc)](https://jenkins.relle.uk/job/rpi-discord-irc)
 
-https://travis-ci.com/acrelle/discord-irc-docker.svg?branch=master
+[![](https://images.microbadger.com/badges/version/acrelle/discord-irc.svg)](https://microbadger.com/images/acrelle/discord-irc "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/acrelle/discord-irc.svg)](https://microbadger.com/images/acrelle/discord-irc "Get your own image badge on microbadger.com")![](https://travis-ci.com/acrelle/discord-irc-docker.svg?branch=master)
 
 https://hub.docker.com/r/acrelle/discord-irc/
+
+### Supported architectures
+
+`amd64`,`arm32v7`
 
 ## Usage
 This provides a container for: https://github.com/reactiflux/discord-irc

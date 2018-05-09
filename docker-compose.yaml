@@ -3,7 +3,7 @@ version: "2"
 services:
   discord-irc:
     build: .
-    image: acrelle/rpi-discord-irc
+    image: acrelle/discord-irc
     container_name: discord-irc
     restart: unless-stopped
     volumes:
