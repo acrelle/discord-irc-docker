@@ -7,7 +7,6 @@ script:
 
   # Build all images
   - docker build --build-arg PLATFORM=linux-amd64 -t acrelle/discord-irc:linux-amd64 -f Dockerfile .
-    
   - docker build --build-arg PLATFORM=linux-arm -t acrelle/discord-irc:linux-arm -f Dockerfile.linux-arm32v7 .
 
   - >

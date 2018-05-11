@@ -5,9 +5,9 @@ RUN apt-get update && \
  apt-get install --no-install-recommends -y libicu-dev && \
  rm -rf /var/lib/apt/lists/*
 
-USER node
+RUN cd /home/node && npm install uws zlib-sync discordapp/erlpack discord-irc
 
-RUN cd ~ && npm install uws zlib-sync discordapp/erlpack discord-irc
+USER node
 
 VOLUME [ "/opt/discord-irc" ]
 CMD [ "/home/node/node_modules/.bin/discord-irc","--config","/opt/discord-irc/config.json" ]

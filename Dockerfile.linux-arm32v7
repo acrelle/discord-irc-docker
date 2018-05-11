@@ -10,12 +10,11 @@ RUN apt-get update && \
  apt-get install -y libicu-dev && \
  rm -rf /var/lib/apt/lists/*
 
+RUN cd /home/node && npm install uws zlib-sync discordapp/erlpack discord-irc
+
 USER node
-
-RUN cd ~ && npm install uws zlib-sync discordapp/erlpack discord-irc
-
-RUN [ "cross-build-end" ]
 
 VOLUME [ "/opt/discord-irc" ]
 CMD [ "/home/node/node_modules/.bin/discord-irc","--config","/opt/discord-irc/config.json" ]
 
+RUN [ "cross-build-end" ]
