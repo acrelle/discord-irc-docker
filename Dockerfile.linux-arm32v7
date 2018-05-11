@@ -1,5 +1,10 @@
-FROM node
+FROM resin/raspberry-pi2-node
 LABEL maintainer="anthony@relle.co.uk"
+
+RUN [ "cross-build-start" ]
+
+RUN groupadd --gid 1000 node \
+  && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
 RUN apt-get update && \
  apt-get install --no-install-recommends -y libicu-dev && \
@@ -7,7 +12,10 @@ RUN apt-get update && \
 
 RUN cd /home/node && npm install uws zlib-sync discordapp/erlpack discord-irc
 
+RUN [ "cross-build-end" ]
+
 USER node
 VOLUME [ "/opt/discord-irc" ]
 CMD [ "/home/node/node_modules/.bin/discord-irc","--config","/opt/discord-irc/config.json" ]
+
 
