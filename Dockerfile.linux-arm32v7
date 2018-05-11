@@ -7,7 +7,7 @@ RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
 RUN apt-get update && \
- apt-get install -y libicu-dev && \
+ apt-get install --no-install-recommends -y libicu-dev && \
  rm -rf /var/lib/apt/lists/*
 
 RUN cd /home/node && npm install uws zlib-sync discordapp/erlpack discord-irc
