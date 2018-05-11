@@ -1,5 +1,3 @@
-sudo: required
-
 language: bash
 
 services:
@@ -7,23 +5,9 @@ services:
 
 script:
 
-  # Update docker for multi-stage build
-  # - sudo service docker stop
-  # - curl -fsSL https://get.docker.com/ | sudo sh
-
   # Build all images
   - docker build --build-arg PLATFORM=linux-amd64 -t acrelle/discord-irc:linux-amd64 -f Dockerfile .
-  
-  # prepare qemu
-  - docker run --rm --privileged multiarch/qemu-user-static:register --reset
-  # get qemu-arm-static binary
-  - mkdir tmp
-  - >
-    pushd tmp &&
-    curl -L -o qemu-arm-static.tar.gz https://github.com/multiarch/qemu-user-static/releases/download/v2.11.1/qemu-arm-static.tar.gz &&
-    tar xzf qemu-arm-static.tar.gz &&
-    popd
-  
+    
   - docker build --build-arg PLATFORM=linux-arm -t acrelle/discord-irc:linux-arm -f linux-arm32v7.Dockerfile .
 
   - >
