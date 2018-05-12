@@ -1,6 +1,8 @@
 FROM node
 LABEL maintainer="anthony@relle.co.uk"
 
+ENV DISCORD-IRC_VERSION 2.6.1
+
 RUN apt-get update && \
  apt-get install --no-install-recommends -y libicu-dev && \
  rm -rf /var/lib/apt/lists/*
