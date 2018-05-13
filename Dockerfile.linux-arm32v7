@@ -1,20 +1,15 @@
-FROM resin/raspberry-pi-alpine-node:9
+FROM resin/raspberry-pi-node
 
 LABEL maintainer="anthony@relle.co.uk"
 LABEL DISCORD-IRC_VERSION=2.6.1
 
 RUN [ "cross-build-start" ]
 
-RUN apk --update upgrade && \
- apk add --no-cache --virtual=temporary libicu-dev && \
- rm -rf /var/cache/apk/*
-
-USER node
-
-RUN cd ~ && npm install uws zlib-sync discordapp/erlpack discord-irc
+RUN cd /home/node && npm install uws@^9.14.0 zlib-sync@^0.1.0 derlpack@discordapp/erlpack discord-irc
 
 RUN [ "cross-build-end" ]
 
+USER node
 VOLUME [ "/opt/discord-irc" ]
 CMD [ "/home/node/node_modules/.bin/discord-irc","--config","/opt/discord-irc/config.json" ]
 
