@@ -11,7 +11,7 @@ script:
 
   - >
 
-    if [ -n "$TRAVIS_BUILD_NUMBER" ]; then
+    if [ "$TRAVIS_BRANCH" == "master" ]; then
       # Push all images
       travis_retry timeout 5m docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
       docker push acrelle/discord-irc:linux-amd64
