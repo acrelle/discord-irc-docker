@@ -1,11 +1,11 @@
-FROM node
+FROM node:alpine
+
 LABEL maintainer="anthony@relle.co.uk"
+LABEL DISCORD-IRC_VERSION=2.6.1
 
-ENV DISCORD-IRC_VERSION 2.6.1
-
-RUN apt-get update && \
- apt-get install --no-install-recommends -y libicu-dev && \
- rm -rf /var/lib/apt/lists/*
+RUN apk --update upgrade && \
+ apk add --no-cache --virtual=temporary libicu-dev && \
+ rm -rf /var/cache/apk/*
 
 USER node
 
