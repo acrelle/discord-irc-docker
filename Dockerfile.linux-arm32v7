@@ -5,7 +5,8 @@ LABEL discord-irc_version=2.6.1
 
 RUN [ "cross-build-start" ]
 
-RUN useradd --no-log-init -r -m node && \
+RUN groupadd --gid 1000 node \
+    && useradd --uid 1000 --no-log-init --gid node --shell /bin/bash --create-home node && \
     cd /home/node && \
     npm install uws@^9.14.0 zlib-sync@^0.1.0 derlpack@discordapp/erlpack discord-irc
 
