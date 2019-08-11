@@ -1,4 +1,4 @@
-FROM node
+FROM node:8
 
 LABEL maintainer="anthony@relle.co.uk" \
     discord-irc_version="2.7.2"
