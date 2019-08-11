@@ -1,7 +1,7 @@
 FROM node
 
 LABEL maintainer="anthony@relle.co.uk" \
-    discord-irc_version="2.6.1"
+    discord-irc_version="2.7.2"
 
 RUN cd /home/node && \
     npm install uws@^9.14.0 zlib-sync@^0.1.0 derlpack@discordapp/erlpack discord-irc
