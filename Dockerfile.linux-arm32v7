@@ -1,4 +1,4 @@
-FROM resin/raspberry-pi2-node
+FROM balenalib/raspberry-pi-node
 
 LABEL maintainer="anthony@relle.co.uk" \
     discord-irc_version="2.8.1"
@@ -8,8 +8,8 @@ RUN [ "cross-build-start" ]
 RUN groupadd --gid 1000 node \
     && useradd --uid 1000 --no-log-init --gid node --shell /bin/bash --create-home node && \
     cd /home/node && \
-    npm install uws@^10.149.0 zlib-sync@^0.1.0 derlpack@discordapp/erlpack discord-irc
-
+    npm install discord-irc@2.8.1
+    
 RUN [ "cross-build-end" ]
 
 USER node

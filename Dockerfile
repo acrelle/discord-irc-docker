@@ -1,10 +1,11 @@
-FROM node:8
+FROM node:12
 
 LABEL maintainer="anthony@relle.co.uk" \
     discord-irc_version="2.8.1"
 
 RUN cd /home/node && \
-    npm install uws@^10.149.0 zlib-sync@^0.1.0 derlpack@discordapp/erlpack discord-irc
+    npm install zlib-sync erlpack bufferutil utf-8-validate && \
+    npm install discord-irc@2.8.1
 
 USER node
 VOLUME [ "/opt/discord-irc" ]
